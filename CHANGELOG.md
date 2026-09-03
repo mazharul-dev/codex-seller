@@ -3,7 +3,7 @@
 ## 1.1.0 - 2026-08-09
 
 ### Added
-- Added a redesigned CodeX Seller admin dashboard.
+- Added a redesigned Codex Seller admin dashboard.
 - Added separate admin views for Dashboard, Updates, Backups, Reports, and Settings.
 - Added safe update flow with health checks, backup before update, rollback support, and email reports.
 - Added manual "Run Now" update action and scheduled automatic updates.
@@ -23,7 +23,7 @@
 ## 1.0.0 - 2026-07-11
 
 ### Added
-- Initial CodeX Seller plugin release.
+- Initial Codex Seller plugin release.
 - Added account settings for API connection.
 - Added purchased product fetch action.
-- Added plugin/theme install and update support from CodeX Seller downloads.
+- Added plugin/theme install and update support from Codex Seller downloads.

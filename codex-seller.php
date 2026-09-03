@@ -1,11 +1,12 @@
 <?php
 /**
- * Plugin Name: CodeX Seller
+ * Plugin Name: Codex Seller
  * Plugin URI:  https://codexsell.com
- * Description: Sync purchased CodeX Seller products and update them directly from your WordPress admin.
+ * Description: Sync purchased Codex Seller products and update them directly from your WordPress admin.
  * Version:     1.1.0
- * Author:      CodeX Seller
+ * Author:      Codex Seller
  * Author URI:  https://codexsell.com
+ * License:     GPL v2 or later
  * Text Domain: codex-seller
  */
 
@@ -87,8 +88,8 @@ final class CodeX_Seller_Plugin
     public function register_admin_menu(): void
     {
         add_menu_page(
-            'CodeX Seller',
-            'CodeX Seller',
+            'Codex Seller',
+            'Codex Seller',
             'manage_options',
             'codex-seller',
             [$this, 'render_admin_page'],
@@ -199,7 +200,7 @@ final class CodeX_Seller_Plugin
                 'install' => __('Install', 'codex-seller'),
                 'updating' => __('Updating...', 'codex-seller'),
                 'rollback' => __('Rollback Now', 'codex-seller'),
-                'rollbackConfirm' => __('Restore the latest CodeX Seller backup now?', 'codex-seller'),
+                'rollbackConfirm' => __('Restore the latest Codex Seller backup now?', 'codex-seller'),
                 'rollbacking' => __('Restoring...', 'codex-seller'),
             ],
         ]);
@@ -233,14 +234,14 @@ final class CodeX_Seller_Plugin
         ?>
         <div class="wrap codex-seller-wrap">
             <?php if (isset($_GET['codex_seller_saved'])): ?>
-                <div class="notice notice-success is-dismissible"><p><?php esc_html_e('CodeX Seller settings saved.', 'codex-seller'); ?></p></div>
+                <div class="notice notice-success is-dismissible"><p><?php esc_html_e('Codex Seller settings saved.', 'codex-seller'); ?></p></div>
             <?php endif; ?>
 
             <div class="codex-seller-app">
-                <aside class="codex-seller-sidebar" aria-label="<?php esc_attr_e('CodeX Seller navigation', 'codex-seller'); ?>">
+                <aside class="codex-seller-sidebar" aria-label="<?php esc_attr_e('Codex Seller navigation', 'codex-seller'); ?>">
                     <div class="codex-seller-brand">
                         <span class="codex-seller-logo"><span class="dashicons dashicons-update-alt"></span></span>
-                        <strong>CodeX Seller</strong>
+                        <strong>Codex Seller</strong>
                     </div>
                     <?php foreach ($navItems as $view => $item): ?>
                         <a class="codex-seller-nav <?php echo esc_attr($activeView === $view ? 'is-active' : ''); ?>" href="<?php echo esc_url($this->get_view_url($view)); ?>">
@@ -259,7 +260,7 @@ final class CodeX_Seller_Plugin
                             <div>
                                 <p class="codex-seller-eyebrow"><?php esc_html_e('Smart. Safe. Automatic.', 'codex-seller'); ?></p>
                                 <h1><?php esc_html_e('Auto Updater Dashboard', 'codex-seller'); ?></h1>
-                                <p><?php esc_html_e('Keep purchased CodeX Seller plugins and themes updated with backups, checks, rollback, and email reports.', 'codex-seller'); ?></p>
+                                <p><?php esc_html_e('Keep purchased Codex Seller plugins and themes updated with backups, checks, rollback, and email reports.', 'codex-seller'); ?></p>
                             </div>
                             <div class="codex-seller-status-strip">
                                 <span class="codex-seller-pill <?php echo esc_attr($statusClass); ?>"><span class="dashicons dashicons-yes-alt"></span><?php echo esc_html($statusLabel); ?></span>
@@ -267,7 +268,7 @@ final class CodeX_Seller_Plugin
                             </div>
                         </section>
 
-                        <section class="codex-seller-feature-grid" aria-label="<?php esc_attr_e('CodeX Seller feature summary', 'codex-seller'); ?>">
+                        <section class="codex-seller-feature-grid" aria-label="<?php esc_attr_e('Codex Seller feature summary', 'codex-seller'); ?>">
                             <div class="codex-seller-feature">
                                 <span class="codex-seller-feature-icon is-blue"><span class="dashicons dashicons-update-alt"></span></span>
                                 <strong><?php esc_html_e('Auto Updates', 'codex-seller'); ?></strong>
@@ -327,7 +328,7 @@ final class CodeX_Seller_Plugin
                                 </div>
 
                                 <?php if (! $loggedIn): ?>
-                                    <div class="codex-seller-empty"><?php esc_html_e('Save your CodeX Seller email and password before fetching products.', 'codex-seller'); ?></div>
+                                    <div class="codex-seller-empty"><?php esc_html_e('Save your Codex Seller email and password before fetching products.', 'codex-seller'); ?></div>
                                 <?php endif; ?>
                                 <div id="codex-seller-products" class="codex-seller-products"></div>
                                 <div id="codex-seller-run-output" class="codex-seller-inline-output" aria-live="polite"></div>
@@ -411,7 +412,7 @@ final class CodeX_Seller_Plugin
                             <div class="codex-seller-card-header">
                                 <div>
                                     <h2><?php esc_html_e('Settings', 'codex-seller'); ?></h2>
-                                    <p><?php esc_html_e('Connect your CodeX Seller account and choose how automation runs.', 'codex-seller'); ?></p>
+                                    <p><?php esc_html_e('Connect your Codex Seller account and choose how automation runs.', 'codex-seller'); ?></p>
                                 </div>
                             </div>
 
@@ -905,7 +906,7 @@ final class CodeX_Seller_Plugin
 
     private function hydrate_product(array $product): array
     {
-        $name = sanitize_text_field($product['name'] ?? $product['title'] ?? __('CodeX Seller Product', 'codex-seller'));
+        $name = sanitize_text_field($product['name'] ?? $product['title'] ?? __('Codex Seller Product', 'codex-seller'));
         $slug = sanitize_title($product['slug'] ?? $product['product_slug'] ?? $name);
         $currentVersion = sanitize_text_field($product['current_version'] ?? $product['version'] ?? $product['latest_version'] ?? '');
         $downloadUrl = esc_url_raw($product['download_url'] ?? $product['downloadUrl'] ?? '');
@@ -1347,7 +1348,7 @@ final class CodeX_Seller_Plugin
         }
 
         $lines = [
-            __('CodeX Seller update report', 'codex-seller'),
+            __('Codex Seller update report', 'codex-seller'),
             '',
             sprintf(__('Mode: %s', 'codex-seller'), $summary['mode'] ?? 'manual'),
             sprintf(__('Products checked: %d', 'codex-seller'), (int) ($summary['checked'] ?? 0)),
@@ -1361,7 +1362,7 @@ final class CodeX_Seller_Plugin
             $lines[] = sprintf('%s - %s - %s', $item['name'] ?? '', $item['status'] ?? '', $item['message'] ?? '');
         }
 
-        wp_mail($settings['report_email'], __('CodeX Seller Update Report', 'codex-seller'), implode("\n", $lines));
+        wp_mail($settings['report_email'], __('Codex Seller Update Report', 'codex-seller'), implode("\n", $lines));
         update_option(self::OPTION_LAST_REPORT, time());
     }
 

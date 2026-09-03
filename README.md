@@ -1,12 +1,12 @@
-# CodeX Seller
+# Codex Seller
 
-CodeX Seller is a WordPress plugin for syncing purchased CodeX Seller products and updating them directly from the WordPress admin dashboard.
+Codex Seller is a WordPress plugin for syncing purchased Codex Seller products and updating them directly from the WordPress admin dashboard.
 
-It connects to the fixed CodeX Seller API at `https://codexsell.com/`, fetches purchased plugins and themes, checks installed versions, installs available updates, creates backups before updates, and supports rollback from the latest backup.
+It connects to the fixed Codex Seller API at `https://codexsell.com/`, fetches purchased plugins and themes, checks installed versions, installs available updates, creates backups before updates, and supports rollback from the latest backup.
 
 ## Features
 
-- Purchased product sync from CodeX Seller
+- Purchased product sync from Codex Seller
 - Plugin and theme update/install support
 - Manual `Run Now` update action
 - Scheduled automatic updates with hourly, twice-daily, or daily frequency
@@ -23,7 +23,7 @@ It connects to the fixed CodeX Seller API at `https://codexsell.com/`, fetches p
 - PHP with WordPress-compatible version support
 - PHP `ZipArchive` extension for backup and rollback features
 - Writable `wp-content/uploads` directory
-- Valid CodeX Seller account credentials
+- Valid Codex Seller account credentials
 
 ## Installation
 
@@ -36,13 +36,13 @@ It connects to the fixed CodeX Seller API at `https://codexsell.com/`, fetches p
 
 3. Log in to your WordPress admin panel.
 4. Go to `Plugins`.
-5. Activate `CodeX Seller`.
-6. Open the `CodeX Seller` menu from the WordPress admin sidebar.
+5. Activate `Codex Seller`.
+6. Open the `Codex Seller` menu from the WordPress admin sidebar.
 
 ## Configuration
 
-1. Go to `CodeX Seller > Settings`.
-2. Enter your CodeX Seller email and password.
+1. Go to `Codex Seller > Settings`.
+2. Enter your Codex Seller email and password.
 3. Review update settings:
    - Auto updates
    - Backup before update
@@ -63,7 +63,7 @@ https://codexsell.com/
 
 ### Fetch Purchased Products
 
-Go to `CodeX Seller > Updates` and click `Fetch Products` to load products from your CodeX Seller account.
+Go to `Codex Seller > Updates` and click `Fetch Products` to load products from your Codex Seller account.
 
 ### Install or Update Products
 
@@ -82,17 +82,17 @@ Click `Run Now` from the Updates page to run the full update cycle manually.
 
 ### Backups and Rollback
 
-When backup is enabled, CodeX Seller creates a backup before installing an update. Backups are stored in:
+When backup is enabled, Codex Seller creates a backup before installing an update. Backups are stored in:
 
 ```text
 wp-content/uploads/codex-seller/backups
 ```
 
-To restore the latest backup, go to `CodeX Seller > Backups` and click `Rollback Now`.
+To restore the latest backup, go to `Codex Seller > Backups` and click `Rollback Now`.
 
 ### Email Reports
 
-Enable email reports from `CodeX Seller > Settings` and set the report email address. Update summaries will be sent after update cycles.
+Enable email reports from `Codex Seller > Settings` and set the report email address. Update summaries will be sent after update cycles.
 
 ## Project Structure
 
@@ -121,7 +121,7 @@ Run these commands from the project folder:
 ```bash
 git init
 git add .
-git commit -m "Initial CodeX Seller plugin"
+git commit -m "Initial Codex Seller plugin"
 git branch -M main
 git remote add origin https://github.com/mazharul-dev/codex-seller.git
 git push -u origin main
@@ -135,4 +135,4 @@ See [CHANGELOG.md](CHANGELOG.md) for release history.
 
 ## License
 
-No license file is included yet. Add a license before publishing this repository publicly if you want to define usage, modification, and distribution rights.
+This project is licensed under GPL v2 or later.
